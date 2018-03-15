@@ -27,6 +27,7 @@ import java.util.Date;
 
 public class EarthquakeActivity extends AppCompatActivity {
 
+    private SimpleDateFormat formatter = new SimpleDateFormat("d-MM-yyyy");
     public static final String LOG_TAG = EarthquakeActivity.class.getName();
 
     @Override
@@ -34,23 +35,23 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
 
         // Create a fake list of earthquake locations.
         ArrayList<Earthquake> earthquakes = new ArrayList<>();
-        try {
-            earthquakes.add(new Earthquake("San Francisco", 7.2, formatter.parse("02-feb-2016")));
-            earthquakes.add(new Earthquake("Tokyo", 3.9, formatter.parse("02-feb-2016")));
-            earthquakes.add(new Earthquake("Mexico City", 5.4, formatter.parse("02-feb-2016")));
-            earthquakes.add(new Earthquake("Moscow", 2.8, formatter.parse("02-feb-2016")));
-            earthquakes.add(new Earthquake("Rio de Janeiro", 4.9, formatter.parse("02-feb-2016")));
-            earthquakes.add(new Earthquake("Paris", 1.6, formatter.parse("02-feb-2016")));
-            earthquakes.add(new Earthquake("London", 6.1, formatter.parse("02-feb-2016")));
-
-        } catch (Exception ex){
-
-            Log.e("RSK01.Earthquake" , "Error creating earthquake data");
-        }
+        earthquakes = QueryUtils.extractEarthquakes();
+//        try {
+//            earthquakes.add(new Earthquake("San Francisco", 7.2, formatter.parse("02-feb-2016")));
+//            earthquakes.add(new Earthquake("Tokyo", 3.9, formatter.parse("02-feb-2016")));
+//            earthquakes.add(new Earthquake("Mexico City", 5.4, formatter.parse("02-feb-2016")));
+//            earthquakes.add(new Earthquake("Moscow", 2.8, formatter.parse("02-feb-2016")));
+//            earthquakes.add(new Earthquake("Rio de Janeiro", 4.9, formatter.parse("02-feb-2016")));
+//            earthquakes.add(new Earthquake("Paris", 1.6, formatter.parse("02-feb-2016")));
+//            earthquakes.add(new Earthquake("London", 6.1, formatter.parse("02-feb-2016")));
+//
+//        } catch (Exception ex){
+//
+//            Log.e("RSK01.Earthquake" , "Error creating earthquake data");
+//        }
 
         // Find a reference to the {@link ListView} in the layout
         ListView earthquakeListView = (ListView) findViewById(R.id.list);

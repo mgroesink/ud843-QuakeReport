@@ -8,15 +8,25 @@ import java.util.Date;
 
 public class Earthquake {
 
-    public Earthquake(String location, double mag, Date date) {
+    public Earthquake(String location, double mag, long time) {
         this.location = location;
         this.mag = mag;
-        this.date = date;
+        this.time = time;
     }
 
     private String location;
     private double mag;
-    private Date date;
+    private long time;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    private String url;
 
     public String getLocation() {
         return location;
@@ -34,12 +44,12 @@ public class Earthquake {
         this.mag = mag;
     }
 
-    public Date getDate() {
-        return date;
+    public long getTimeInMilliseconds() {
+        return time;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTimeInMilliseconds(long time) {
+        this.time = time;
     }
 
 
