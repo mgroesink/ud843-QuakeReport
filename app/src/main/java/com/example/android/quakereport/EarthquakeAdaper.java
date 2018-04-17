@@ -17,6 +17,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static android.support.v4.app.ActivityCompat.startActivity;
 
@@ -25,7 +26,7 @@ import static android.support.v4.app.ActivityCompat.startActivity;
  */
 
 public class EarthquakeAdaper extends ArrayAdapter {
-    public EarthquakeAdaper(@NonNull Context context, ArrayList<Earthquake > resource) {
+    public EarthquakeAdaper(@NonNull Context context, List<Earthquake > resource) {
         super(context, 0 , resource);
     }
 
@@ -80,7 +81,7 @@ public class EarthquakeAdaper extends ArrayAdapter {
     }
 
     /**
-     * 
+     *
      * @param mag
      * @return
      */

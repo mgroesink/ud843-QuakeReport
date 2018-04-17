@@ -1,5 +1,6 @@
 package com.example.android.quakereport;
 
+import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -8,12 +9,18 @@ import java.util.Date;
 
 public class Earthquake {
 
+    public Date getDate() {
+        return date;
+    }
+
     public Earthquake(String location, double mag, long time) {
+        this.date = new Date(time);
         this.location = location;
         this.mag = mag;
         this.time = time;
     }
 
+    private Date date;
     private String location;
     private double mag;
     private long time;
